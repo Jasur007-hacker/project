@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>JavaScript on Steroids</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div class="container-1">   
+        <h2> Challenge 1: Your age in Days </h2>
+        <div class="flex-box-container-1">
+            <div> 
+                <button class = "btn btn-primary" onclick="ageInDays()">click me</button>
+            </div>
+
+            <div>    
+                <button class="btn btn-danger" onclick="reset()">reset</button>
+            </div>
+        </div>
+        <div class="flex-box-container-1">
+            <div Id="flex-box-result">
+
+            </div>
+
+        </div>
+    </div>
+    <div class="container-2">
+        <h2>Challenge 2: Cat Generator</h2>
+        <button class="btn btn-success" id="cat-generator" onclick="generateCat()">Generate Cat</button>
+        <div class="flex-box-container-2" id="flex-cat-gen">
+            
+        </div>
+        
+    </div>
+    <div class="container-3">
+        <h2>Challenge 3: Rock, Paper, Scissors</h2>
+        
+        <div class="flex-box-rps" id="flex-box-rps-div">
+            <img id="rock" src="img/rock.png" alt="rock" height=150 width=150 onclick="rpsGame(this)">
+            <img id="paper" height=150 width=150 onclick="rpsGame(this)" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAD/CAMAAACdMFkKAAAAvVBMVEX///8AiNoAAABNS0lKSEYAi9vq9PuDvurXAABbreUsnOBytec2oOHT5/elzu+SxewNlt6x1PHF4PTg7vn4/P4AkNxIpOK/3PO32PLeRUD++fkcAAAKCwwAjuPHMTnlFAAQAADv7++JiId8e3oADAgAFBEiIyPX19erq6vk5OS5urpiYmPq/f/ROjzD6P4VAACSkpNTtO18xfOnyumLzPVzseIAluU6q+vCwL/d9v9ovPCd1Pe04PvS8P/u/v8JjlPtAAADjklEQVR4nO2dW1faUBCF0yO26f1qWzQlBBS5NMZe7cX2//8sIRKE1S0PZa3jnsn+njiTF76lAzshmZMkxbBjnGGRJEWAHJ/gOidFMgiDBNBND1GZkoXCXoCHLGkkYU8aPEiDCWkwIQ0mpMGENJjY0Cg6YXTaLOxqZCFbJPdrzGqchizLwni5MqsxqTWmy5VZjWQ2PxscNQu7Gsl4dr56bVhjnW4a+a3swkLj6AWil8MyJ0cLjX3Ah16OyqQcOfwW30Aa8ZEGE9JgQhpM1GFk/96/zL/FQZWU+lu8eoTo5bDMSeUn4TrpDWmwIA0mpMFErXEf8LGbojIpjsJI/yHgU5mjMil9hREipMGENJiQBhO1xlPAn26KyqQ4CiPhAeBzmaMyKY5++/PS4vCINOIjDSakwUSt8RJwWaaoTIqnMPIM8LvMv6A6J556Ax6RRnykwYQ0mPB09vcc8LXMUZkUT2HkFeCsTFGZlBa0uDRiIw0mpMGEozDSfwz4VebfUJ2TvqMw8hrws5uiMiktaHFpxEYaTEiDCUdhpHoCuOjlqExKtSWMoDIn12HkDWLeG7BOSQtaXBqxkQYT0mDCURiBky2+9/KD2PMp/p96QMcBYKFhh20DOiL/Y+xCC1pcGrGRBhPSYCJsOYmNfCK6C45utqjeAi56OSqT4nJAR/Fjsnptr8WbxTSEm0H9ZjUO62GZzQhWsxpORpc6+Ws46Q3rn1ToB3N7P+87CSNObn1xF0bWsdfi8Ig04iMNJqTBRK3xDnBWpqhMyrYwYu1mC/SYjb2HghRGWJAGE9JgogUakd/KLgQ/IyGcXBkJ7wGXZYrKpLSgxaURG2kwIQ0mPIURNH7S3rBML2EEjWa1N0jWeYtLIzbSYEIaTDgKI062EfESRtCmNX/NbbHjvMWlERtpMCENJhyFkQruA29q0/rqtkd7tWn9HdCCFpdGbKTBhDSYcKTh5JKCNq1nwVFvSIMFaTAhDSbCbVfUtWl9fLRpPRWeWhwekUZ8pMGENJgIfu41dBJGnNyHqzDCgjSYkAYT0mCi1kDbwPvZtN7agA70zK+9J5TdhZHx7Hz12l6LN4tZCGHULMxqTOphmdPlyqyGk9GlSRayEIrlwq5G0QmjZgCrYY0N7H3goolP9uZTebkygraB16b1d4A0mJAGE9JgQhpMzDUGNwP517GksVAoAuT4BNc5mZ8lFcOOcYZFcgUPYAMwThkFdAAAAABJRU5ErkJggg==" alt="">
+            <img height=150 width=150 id="scissors" onclick="rpsGame(this)"src="data:image/png;base64,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" alt="">
+            
+        </div>
+        <button class="btn btn-danger" id="playAgain" onclick="playAgain()">Play Again</button>
+    </div>
+    <script>
+        function playAgain(){
+            location.reload();
+        }
+    </script>
+    <div class="container-4">
+        <h2 id="change-my-color">Challenge 4: Change the Color of All Buttons</h2>
+        <div class="flex-box-pick-color">
+            <form action="">
+                <select name="backdrop" id="background" onchange="buttonColorChange(this)">
+                    <option value="random">Random</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="reset">Reset</option>
+                </select>
+
+            </form>
+            <button class="btn btn-primary">Wee!</button>
+            <button class="btn btn-danger">Yahoo!</button>
+            <button class="btn btn-warning">Google!</button>
+            <button class="btn btn-success">Facebook!</button>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+
+</body>
+</html>
